@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Slider with Captions</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #016064;
+    }
+    
+  .swiper-container {
+      width: 750px;
+      height: 600px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.6s;
+    }
+    .swiper-slide:hover {
+      transform: scale(1.05);
+    }
+    .swiper-slide .caption {
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 20px;
+      width: 100%;
+      text-align: center;
+      transition: opacity 0.6s, transform 0.6s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .swiper-slide-active .caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .caption h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .caption p {
+      margin: 0;
+      font-size: 16px;
+    }
+    .swiper-pagination-bullet {
+      background-color: #fff;
+      opacity: 0.8;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: #007aff;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #007aff;
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image: url('kd.jpg">
+        <div class="caption">
+          <h2>Kedarnath </h2>
+          <p>'Kedarnath: Where the divine power of Lord Shiva is palpable'</p>
+        </div>
+      </div>
+      <div class="swiper-slide" style="background-image: url('kashmir.jpg')">
+        <div class="caption">
+          <h2>Kashmir</h2>
+          <p>'One State, Many Worlds' to 'Chalo Kashmir'</p>
+        </div>
+      </div>
+      <div class="swiper-slide" style="background-image: url('ld.jpg')">
+        <div class="caption">
+          <h2>Ladakh</h2>
+          <p>'the guest is equivalent to God'</p>
+        </div>
+      </div>
+        <div class="swiper-slide" style="background-image: url('rishikesh.jpg')">
+          <div class="caption">
+            <h2>Rishikesh</h2>
+            <p>'Rishikesh is the yoga capital of the world, where the mind, body, and soul unite'</p>
+          </div>
+      </div>
+
+    <div class="swiper-slide" style="background-image: url('varanasi.webp')">
+      <div class="caption">
+        <h2> Varanasi</h2>
+        <p>'Varanasi: A city where spirituality and history embrace in a timeless dance'</p>
+      </div>
+  </div>
+  <div class="swiper-slide" style="background-image: url('nainital.jpg')">
+    <div class="caption">
+      <h2>Nainital</h2>
+      <p>'Nainital, a serene paradise cradled in the lap of the Himalayas'</p>
+    </div>
+</div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Navigation -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      spaceBetween: 30,
+      effect: 'slide',
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+</body>
+</html>
